@@ -1,0 +1,46 @@
+#!/bin/bash
+. ~/.config/HyprV/hyprv.conf
+
+get_theme() {
+    THEMEIS=$(readlink -f ~/.config/waybar/style.css | cut -d '-' -f2)
+
+    if [[ $THEMEIS == "dark.css" ]]; then
+        SWITCHTO="dark"
+        MODESTR="Dark"
+    else
+        SWITCHTO="light"
+        MODESTR="Light"
+    fi
+}
+
+choose_conf() {
+   ln -sf ~/.config/HyprV/waybar/conf/'config.jsonc' ~/.config/waybar/config.jsonc
+}
+
+restart_waybar() {
+    pkill waybar
+    waybar & 
+}
+
+set_current_background() {
+    get_theme
+
+    sleep 0.5 # wait for swww to start completely
+    
+    swww img $SET_BG
+    if [[ -z "$SET_BG" ]]; then # if background is not set
+        #set the current background
+        if [[ $THEMEIS == "dark.css" ]]; then
+            swww img ~/.config/HyprV/backgrounds/'background-dark.jpg'
+        else
+            swww img ~/.config/HyprV/backgrounds/'background.jpg'
+        fi
+    fi
+}
+
+
+if [[ "$1" == "setbg" ]]; then
+    set_current_background
+    restart_waybar
+fi
+
