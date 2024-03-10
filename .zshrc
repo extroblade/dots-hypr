@@ -4,7 +4,6 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
   git
-  sudo
   docker
   npm
   composer
@@ -38,6 +37,7 @@ sc() {
   args=( "${@[@]}" )
   su -c "$args"
 }
-
+alias tmuxc='tmux new && tmux attach'
 alias pokemon="pokemon-colorscripts --no-title -r"
 alias pipes='pipes.sh -r -R -p 5'
+alias weather='curl https://wttr.in/Ulyanovsk'
