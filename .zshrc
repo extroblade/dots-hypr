@@ -17,7 +17,8 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(zoxide init zsh)"
 
-alias eza='eza --icons '
+alias eza='eza --icons'
+alias ls='eza --icons'
 alias cd='z'
 alias grep='grep --color=auto'
 
