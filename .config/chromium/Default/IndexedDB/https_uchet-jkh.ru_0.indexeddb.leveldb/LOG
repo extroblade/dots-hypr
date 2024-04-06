@@ -1,6 +1,0 @@
-2024/03/04-14:32:00.068 f48e Creating DB /home/extroblade/.config/chromium/Default/IndexedDB/https_uchet-jkh.ru_0.indexeddb.leveldb since it was missing.
-2024/03/04-14:32:00.070 f48e Reusing MANIFEST /home/extroblade/.config/chromium/Default/IndexedDB/https_uchet-jkh.ru_0.indexeddb.leveldb/MANIFEST-000001
-2024/03/04-14:32:32.081 f499 Level-0 table #5: started
-2024/03/04-14:32:32.082 f499 Level-0 table #5: 4874 bytes OK
-2024/03/04-14:32:32.082 f499 Delete type=0 #3
-2024/03/04-14:32:32.083 f499 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
