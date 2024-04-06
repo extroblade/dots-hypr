@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+AUR=$(paru -Qua | wc -l)
+
+case $1 in
+    aur) echo " $AUR";;
+    official) echo " $OFFICIAL";;
+esac
+
+if [ "$1" = "update" ]; then
+    kitty --title update-sys sh -c 'paru -Syu'
+fi
+
+if [ "$1" = "" ]; then
+    COUNT=$((OFFICIAL+AUR))
+
+    if [[ "$COUNT" = "0" ]]
+    then
+        echo "☷"
+    else
+        echo "☰ $COUNT"
+    fi
+    exit 0
+fi

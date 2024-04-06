@@ -1,0 +1,7 @@
+2024/03/04-18:25:33.256 f48e Reusing MANIFEST /home/extroblade/.config/chromium/Default/IndexedDB/https_24.fmake.ru_0.indexeddb.leveldb/MANIFEST-000001
+2024/03/04-18:25:33.256 f48e Recovering log #3
+2024/03/04-18:25:33.259 f48e Reusing old log /home/extroblade/.config/chromium/Default/IndexedDB/https_24.fmake.ru_0.indexeddb.leveldb/000003.log 
+2024/03/04-18:59:25.497 f48f Level-0 table #5: started
+2024/03/04-18:59:25.499 f48f Level-0 table #5: 129971 bytes OK
+2024/03/04-18:59:25.500 f48f Delete type=0 #3
+2024/03/04-18:59:25.500 f48f Manual compaction at level-0 from (begin) .. (end); will stop at (end)

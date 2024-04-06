@@ -1,0 +1,27 @@
+2024/03/10-13:04:21.720 4 Reusing MANIFEST /home/extroblade/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2024/03/10-13:04:21.725 4 Recovering log #56
+2024/03/10-13:04:21.726 4 Reusing old log /home/extroblade/.config/chromium/Default/Local Storage/leveldb/000056.log 
+2024/03/10-13:05:22.376 6 Level-0 table #60: started
+2024/03/10-13:05:22.378 6 Level-0 table #60: 99394 bytes OK
+2024/03/10-13:05:22.379 6 Delete type=0 #56
+2024/03/10-13:28:47.558 6 Level-0 table #62: started
+2024/03/10-13:28:47.561 6 Level-0 table #62: 183388 bytes OK
+2024/03/10-13:28:47.563 6 Delete type=0 #59
+2024/03/10-13:28:47.563 6 Compacting 4@0 + 1@1 files
+2024/03/10-13:28:47.574 6 Generated table #63@0: 549 keys, 620844 bytes
+2024/03/10-13:28:47.574 6 Compacted 4@0 + 1@1 files => 620844 bytes
+2024/03/10-13:28:47.575 6 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/03/10-13:28:47.576 6 Delete type=2 #60
+2024/03/10-13:28:47.576 6 Delete type=2 #62
+2024/03/10-13:28:47.576 6 Delete type=2 #55
+2024/03/10-13:28:47.576 6 Delete type=2 #53
+2024/03/10-13:28:47.576 6 Delete type=2 #57
+2024/03/10-13:29:46.822 6 Level-0 table #65: started
+2024/03/10-13:29:46.823 6 Level-0 table #65: 36835 bytes OK
+2024/03/10-13:29:46.825 6 Delete type=0 #61
+2024/03/10-14:14:48.494 6 Level-0 table #67: started
+2024/03/10-14:14:48.496 6 Level-0 table #67: 78773 bytes OK
+2024/03/10-14:14:48.497 6 Delete type=0 #64
+2024/03/10-14:20:35.715 6 Level-0 table #69: started
+2024/03/10-14:20:35.718 6 Level-0 table #69: 194168 bytes OK
+2024/03/10-14:20:35.719 6 Delete type=0 #66

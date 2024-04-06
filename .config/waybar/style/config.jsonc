@@ -1,0 +1,203 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 50,
+    "modules-left": [
+        "custom/launch_wofi",
+        "hyprland/workspaces",
+        "cpu",
+        "memory",
+        "disk",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "custom/lock_screen",
+        "custom/updates",
+        "clock",
+        "custom/power_btn",
+        "custom/cava"
+    ],
+    "modules-right": [
+        "network",
+        "hyprland/language",
+        "pulseaudio",
+        "pulseaudio#microphone",
+        "tray",
+        "custom/weather",
+        "custom/light_dark"
+    ],
+
+    "include": [
+        "~/.config/waybar/conf/mesu-met.jsonc",
+        "~/.config/waybar/conf/hyprv-util.jsonc"
+    ],
+
+
+    "hyprland/language": {
+      "format": "{}",
+      "format-ru": "ru",
+      "format-us": "us",
+      "format-en": "us",
+      "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    },
+
+    "custom/launch_wofi": {
+        "format": "",
+        "on-click": "sh -c '(sleep 0.5s; wofi)' & disown",
+        "tooltip": false
+    },
+
+    "custom/lock_screen": {
+        "format": "",
+        "on-click": "sh -c '(sleep 0.5s; swaylock)' & disown",
+        "tooltip": false
+    },
+
+    "custom/power_btn": {
+        "format": "",
+        "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "max-length": 10,
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/",
+        "tooltip": true,
+        "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": "Memory - {used:0.1f}GB used of {total}GB",
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    },
+
+    "custom/updates": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/update-sys",
+        "on-click": "~/.config/waybar/scripts/update-sys update",
+        "interval": 300,
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+      "format": "{name}",
+      "show-special": false,
+      "on-click": "activate",
+      "all-outputs": true,
+      "sort-by-number": true,
+      "format-icons": {
+        "1": "main  ",
+        "2": " ",
+        "3": " ",
+        "4": " ",
+        "5": " ",
+        "6": " ",
+        "7": " ",
+        "8": " ",
+        "9": " ",
+        "10": ""
+      },
+      "on-scroll-up": "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+        "show-passive-items": false
+    },
+
+    "network": {
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "on-click": "~/.config/waybar/scripts/volume --toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "~/.config/waybar/scripts/volume --toggle-mic",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "~/.config/waybar/scripts/volume --mic-inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume --mic-dec",
+        "scroll-step": 5
+    },
+    "cava": {                                                                       
+	//"cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",                         
+	"framerate": 30,                                                            
+	"autosens": 1,                                                              
+	//"sensitivity": 100,                                                       
+	"bars": 10,                                                                 
+	"lower_cutoff_freq": 50,                                                    
+	"higher_cutoff_freq": 10000,                                                
+	"method": "pulse",                                                          
+	"source": "auto",                                                           
+	"stereo": true,                                                             
+	"reverse": false,                                                           
+	"bar_delimiter": 0,                                                         
+	"monstercat": false,                                                        
+	"waves": false,                                                             
+	"noise_reduction": 0.77,                                                    
+	"input_delay": 2.0,                                                       
+	"format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],                 
+	"actions": {                                                                
+	    "on-click-right": "mode"                                                
+	}                                                                           
+	},
+    "custom/cava": {
+      "format": "{icon}{}",
+      "format-icons": {
+          // "Playing": " ", // Uncomment if not using caway
+          "Paused": " ",
+          "Stopped": "&#x202d;ﭥ " // This stop symbol is RTL. So &#x202d; is left-to-right override.
+      },
+      "escape": true,
+      "tooltip": true,
+      "exec": "~/.scripts/caway",
+      "return-type": "json",
+      "on-click": "playerctl play-pause",
+      "on-scroll-up": "playerctl previous",
+      "on-scroll-down": "playerctl next",
+      "on-click-right": "g4music",
+      "max-length": 35
+    }
+}
